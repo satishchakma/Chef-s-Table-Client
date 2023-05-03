@@ -1,0 +1,11 @@
+.chefs-container {
+  background: url("../assets/chefs-bg.png");
+  min-height: 600px;
+  background-size: 100% auto;
+  background-position: left center;
+}
+.chefs-container img {
+  width: 100%;
+  max-height: 200px;
+  object-fit: cover;
+}
