@@ -14,4 +14,11 @@
   text-align: center;
   border: 0px;
   outline: none;
+  border: 2px solid transparent;
+  transition: all 0.3s ease-in-out;
+}
+.hero-btn:hover {
+  background: transparent;
+  border: 2px solid #ff812b;
+  color: #ff812b;
 }

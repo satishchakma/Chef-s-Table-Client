@@ -6,3 +6,19 @@
 .active {
   border-bottom: 1px solid grey;
 }
+.login-btn {
+  background: transparent;
+  border: 2px solid #ff812b;
+  border-radius: 100px;
+  color: #ff812b;
+  transition: all 0.3s ease-in-out;
+  padding: 15px 40px;
+  font-size: 20px;
+  line-height: 20px;
+  letter-spacing: 0.03em;
+  text-align: center;
+}
+.login-btn:hover {
+  background-color: #ff812b;
+  color: white;
+}
