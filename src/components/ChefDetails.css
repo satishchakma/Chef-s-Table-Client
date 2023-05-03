@@ -1,0 +1,7 @@
+.chefdetails {
+  background: url("../assets/chefs-bg.png");
+  min-height: 600px;
+  background-size: contain;
+  /* background-size: 100% auto; */
+  background-position: left center;
+}

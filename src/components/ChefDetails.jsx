@@ -1,10 +1,15 @@
 import React, { useState } from "react";
 import { useEffect } from "react";
 import { useParams } from "react-router-dom";
+import "./ChefDetails.css";
+import Recipes from "./Recipes";
 
 const ChefDetails = () => {
   const [details, setDetails] = useState({});
   const chefId = useParams();
+
+  const recipes = details.recipes;
+  console.log(recipes);
 
   useEffect(() => {
     fetch(`http://localhost:3000/${chefId.id}`)
@@ -13,7 +18,7 @@ const ChefDetails = () => {
   }, []);
   //   console.log(id);
   return (
-    <div className="container mx-auto grid grid-cols-3">
+    <div className="container mx-auto grid grid-cols-3 chefdetails">
       <div className="container mx-auto mb-8">
         <div className="card w-96 glass">
           <figure>
@@ -37,7 +42,13 @@ const ChefDetails = () => {
         </div>
       </div>
       <div className="col-span-2">
-        <h1> {details?.chef_name}'s Recipes</h1>
+        <h1 className="text-4xl font-semibold">
+          {details?.chef_name}'s Recipes
+        </h1>
+
+        {recipes?.map((recipe) => (
+          <Recipes recipe={recipe}></Recipes>
+        ))}
       </div>
     </div>
   );
