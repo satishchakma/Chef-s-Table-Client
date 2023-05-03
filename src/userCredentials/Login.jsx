@@ -8,7 +8,7 @@ import { FcGoogle } from "react-icons/fc";
 import { BsGithub } from "react-icons/bs";
 
 const Login = () => {
-  const { signIn } = useContext(AuthContext);
+  const { signIn, googleSignIn, githubSignIn } = useContext(AuthContext);
   const [error, setError] = useState("");
   const [disabled, setDisabled] = useState(false);
 
@@ -41,6 +41,29 @@ const Login = () => {
     } else if (event.target.value.length >= 6) {
       setError("");
     }
+  };
+
+  const handleGoogleSignIn = () => {
+    googleSignIn()
+      .then((result) => {
+        const loggedInUser = result.user;
+        console.log(loggedInUser);
+        // setUser(loggedInUser);
+      })
+      .catch((error) => {
+        console.log(error);
+      });
+  };
+  const handleGithubSignIn = () => {
+    githubSignIn()
+      .then((result) => {
+        const loggedInUser = result.user;
+        console.log(loggedInUser);
+        // setUser(loggedInUser);
+      })
+      .catch((error) => {
+        console.log(error);
+      });
   };
 
   return (
@@ -93,13 +116,19 @@ const Login = () => {
               </div>
             </form>
             <p className="text-center">OR</p>
-            <div className="m-4 btn-primary btn text-center flex justify-center items-center gap-4">
+            <div
+              onClick={handleGoogleSignIn}
+              className="m-4 btn-primary btn text-center flex justify-center items-center gap-4"
+            >
               <div className="p-3">
                 <FcGoogle />
               </div>
               <h3>Continue with Google</h3>
             </div>
-            <div className="mx-4 mb-4 btn-primary btn text-center flex justify-center items-center gap-4">
+            <div
+              onClick={handleGithubSignIn}
+              className="mx-4 mb-4 btn-primary btn text-center flex justify-center items-center gap-4"
+            >
               <div className=" p-3">
                 <BsGithub></BsGithub>
               </div>
