@@ -30,7 +30,9 @@ const Login = () => {
       })
       .catch((error) => {
         console.log(error);
+        setError(error.message);
       });
+    form.reset();
   };
 
   const handlePasswordChange = (event) => {

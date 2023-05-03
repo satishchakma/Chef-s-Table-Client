@@ -45,10 +45,7 @@ const Header = () => {
             {user && (
               <div>
                 <div className="dropdown dropdown-end">
-                  <label
-                    tabIndex={0}
-                    className="btn btn-ghost btn-circle avatar "
-                  >
+                  <label tabIndex={0} className="my-avatar ">
                     <div className="w-10 rounded-full">
                       {user?.photoURL ? (
                         <div className="tooltip" data-tip={user?.displayName}>

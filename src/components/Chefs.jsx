@@ -6,10 +6,13 @@ import "./Chefs.css";
 
 const Chefs = () => {
   const [chefs, setchefs] = useState([]);
+  const [loading, setLoading] = useState(true);
+
   useEffect(() => {
     fetch("http://localhost:3000/")
       .then((res) => res.json())
       .then((data) => setchefs(data));
+    setLoading(false);
   }, []);
 
   return (
@@ -26,6 +29,14 @@ const Chefs = () => {
           <SingleChef key={chef.id} chef={chef}></SingleChef>
         ))}
       </div>
+      {/* loader spinner here */}
+      {loading ? (
+        <div className="fixed top-0 left-0 right-0 bottom-0 flex justify-center items-center">
+          <div className="animate-spin rounded-full h-32 w-32 border-t-2 border-b-2 border-purple-500"></div>
+        </div>
+      ) : (
+        <></>
+      )}
     </div>
   );
 };
