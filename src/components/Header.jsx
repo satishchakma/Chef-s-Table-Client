@@ -1,25 +1,45 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
 import profile from "../assets/profile.jpg";
 import "./Header.css";
 
 const Header = () => {
+  //   <NavLink
+  //     to={`contacts/${contact.id}`}
+  //     className={({ isActive, isPending }) =>
+  //       isActive ? "active" : isPending ? "pending" : ""
+  //     }
+  //   >
+  //     {/* other code */}
+  //   </NavLink>;
   return (
     <div className="container mx-auto bg-[#00800026] rounded-lg my-5 px-5">
       <div className="navbar ">
         <div className="flex-1">
-          <a className=" normal-case text-xl logo">Chef's Table</a>
+          <Link to="/" className=" normal-case text-xl logo">
+            Chef's Table
+          </Link>
         </div>
         <div className="flex-none">
-          <ul className="menu menu-horizontal px-1">
-            <li>
-              <Link to="/">Home</Link>
-            </li>
+          <div className="flex justify-center items-center gap-5">
+            <div>
+              <NavLink
+                to="/"
+                className={({ isActive }) => (isActive ? "active" : "pending")}
+              >
+                Home
+              </NavLink>
+            </div>
 
-            <li>
-              <Link to="/blog">Blog</Link>
-            </li>
-            <li>
+            <div>
+              <NavLink
+                to="/blog"
+                className={({ isActive }) => (isActive ? "active" : "pending")}
+              >
+                Blog
+              </NavLink>
+            </div>
+            <div>
               <div className="dropdown dropdown-end">
                 <label tabIndex={0} className="btn btn-ghost btn-circle avatar">
                   <div className="w-10 rounded-full">
@@ -44,8 +64,8 @@ const Header = () => {
                   </li>
                 </ul>
               </div>
-            </li>
-          </ul>
+            </div>
+          </div>
         </div>
       </div>
     </div>
