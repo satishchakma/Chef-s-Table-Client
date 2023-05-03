@@ -6,6 +6,7 @@
 }
 .chefs-container img {
   width: 100%;
-  max-height: 200px;
+  /* max-height: 200px; */
+  height: 425px;
   object-fit: cover;
 }

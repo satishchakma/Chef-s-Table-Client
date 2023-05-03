@@ -11,11 +11,13 @@ import Login from "./userCredentials/Login";
 import Register from "./userCredentials/Register";
 import AuthProviders from "./providers/AuthProviders";
 import ChefDetails from "./components/ChefDetails";
+import ErrorPage from "./components/ErrorPage";
 
 const router = createBrowserRouter([
   {
     path: "/",
     element: <Main></Main>,
+    errorElement: <ErrorPage></ErrorPage>,
     children: [
       {
         path: "/",
