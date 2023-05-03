@@ -13,7 +13,7 @@ const SingleChef = (props) => {
           </figure>
           <div className="card-body">
             <h2 className="card-title">{chef_name}</h2>
-            <p>Years of experience{years_of_experience}</p>
+            <p>Years of experience: {years_of_experience}</p>
 
             <p>Numbers of recipes: {props?.chef?.recipes?.length}</p>
             <p>Likes: {likes}</p>
