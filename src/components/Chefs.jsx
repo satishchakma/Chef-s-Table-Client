@@ -4,12 +4,14 @@ import { useEffect } from "react";
 import SingleChef from "../SingleChef";
 import "./Chefs.css";
 
+import { FidgetSpinner } from "react-loader-spinner";
+
 const Chefs = () => {
   const [chefs, setchefs] = useState([]);
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    fetch("http://localhost:3000/")
+    fetch("https://chefs-table-server-satishchakma.vercel.app/")
       .then((res) => res.json())
       .then((data) => setchefs(data));
     setLoading(false);
@@ -24,19 +26,28 @@ const Chefs = () => {
           food selection. We do so in 4 ways.
         </p>
       </div>
+      {/* loader spinner here */}
+      {loading ? (
+        <div className="flex justify-center">
+          <FidgetSpinner
+            visible={true}
+            height="80"
+            width="80"
+            ariaLabel="dna-loading"
+            wrapperStyle={{}}
+            wrapperClass="dna-wrapper"
+            ballColors={["#ff0000", "#00ff00", "#0000ff"]}
+            backgroundColor="#F4442E"
+          />
+        </div>
+      ) : (
+        <></>
+      )}
       <div className="grid grid-cols-3 gap-4 my-24 py-12 container mx-auto">
         {chefs.map((chef) => (
           <SingleChef key={chef.id} chef={chef}></SingleChef>
         ))}
       </div>
-      {/* loader spinner here */}
-      {loading ? (
-        <div className="fixed top-0 left-0 right-0 bottom-0 flex justify-center items-center">
-          <div className="animate-spin rounded-full h-32 w-32 border-t-2 border-b-2 border-purple-500"></div>
-        </div>
-      ) : (
-        <></>
-      )}
     </div>
   );
 };

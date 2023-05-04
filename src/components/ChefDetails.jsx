@@ -12,7 +12,7 @@ const ChefDetails = () => {
   console.log(recipes);
 
   useEffect(() => {
-    fetch(`http://localhost:3000/${chefId.id}`)
+    fetch(`https://chefs-table-server-satishchakma.vercel.app/${chefId.id}`)
       .then((res) => res.json())
       .then((data) => setDetails(data));
   }, []);
