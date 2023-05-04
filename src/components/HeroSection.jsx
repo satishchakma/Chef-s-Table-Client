@@ -6,7 +6,7 @@ import { Link } from "react-router-dom";
 
 const HeroSection = () => {
   return (
-    <div className="flex items-center justify-center gap-3">
+    <div className="md:flex items-center justify-center gap-3 text-center md:text-start">
       <div className="basis-6/12 ">
         <img className="hero-img" src={hero}></img>
       </div>

@@ -1,0 +1,10 @@
+.feature-heading {
+  text-transform: inherit;
+  letter-spacing: inherit;
+  font-weight: 700;
+  font-size: 50px;
+  line-height: 60px;
+  color: #391f15;
+  margin-bottom: 4%;
+  text-align: center;
+}

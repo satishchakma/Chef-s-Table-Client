@@ -7,7 +7,7 @@ const SingleChef = (props) => {
   return (
     <div>
       <div className="container mx-auto mb-8">
-        <div className="card w-96 glass">
+        <div className="card w-96 glass mx-auto">
           <figure>
             <img src={chef_picture} alt="chef's table" />
           </figure>

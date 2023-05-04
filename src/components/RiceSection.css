@@ -1,0 +1,36 @@
+.rice img {
+  margin: -5.5% 0;
+}
+.rice-heading {
+  text-transform: inherit;
+  letter-spacing: inherit;
+  font-weight: 700;
+  font-size: 50px;
+  line-height: 60px;
+  color: #ff812b;
+}
+.rice-text {
+  text-transform: inherit;
+  letter-spacing: inherit;
+  font-weight: 700;
+  font-size: 30px;
+  line-height: 35px;
+  color: #735e56;
+  margin: 15px 0 40px;
+}
+.rice-btn {
+  border-radius: 100px;
+  padding: 10px 30px;
+  text-transform: uppercase;
+  font-weight: 700;
+  text-align: center;
+  border: 0px;
+  outline: none;
+  border: 2px solid #ff812b;
+  transition: all 0.3s ease-in-out;
+}
+.rice-btn:hover {
+  background: #ff812b;
+  border: 2px solid #ff812b;
+  color: white;
+}

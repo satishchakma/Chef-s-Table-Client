@@ -43,7 +43,7 @@ const Chefs = () => {
       ) : (
         <></>
       )}
-      <div className="grid grid-cols-3 gap-4 my-24 py-12 container mx-auto">
+      <div className="md:grid grid-cols-3 gap-4 my-24 py-12 container mx-auto">
         {chefs.map((chef) => (
           <SingleChef key={chef.id} chef={chef}></SingleChef>
         ))}
