@@ -1,10 +1,15 @@
 import React from "react";
+import { useState } from "react";
 import { useContext } from "react";
 import { Link } from "react-router-dom";
 import { AuthContext } from "../providers/AuthProviders";
 
 const Register = () => {
   const { createUser } = useContext(AuthContext);
+
+  const [error, setError] = useState("");
+  const [password, setPassword] = useState("");
+
   const handleLogin = (event) => {
     event.preventDefault();
     const form = event.target;
@@ -23,6 +28,16 @@ const Register = () => {
       });
 
     form.reset();
+  };
+
+  const handlePasswordChange = (event) => {
+    setPassword(event.target.value);
+
+    if (event.target.value.length < 6) {
+      setError("Please enter at least 6 characters");
+    } else if (event.target.value.length >= 6) {
+      setError("");
+    }
   };
   return (
     <div>
@@ -71,12 +86,15 @@ const Register = () => {
                   <span className="label-text">Password</span>
                 </label>
                 <input
+                  onChange={handlePasswordChange}
+                  value={password}
                   type="password"
                   placeholder="password"
                   className="input input-bordered"
                   name="password"
                   required
                 />
+                <p className="text-[#d70e0e]">{error}</p>
                 <label className="label">
                   <a href="#" className="label-text-alt link link-hover">
                     Already have an account?
@@ -85,7 +103,12 @@ const Register = () => {
                 </label>
               </div>
               <div className="form-control mt-6">
-                <button className="btn btn-primary">Register</button>
+                <button
+                  disabled={password.length < 6}
+                  className="btn btn-primary"
+                >
+                  Register
+                </button>
               </div>
             </form>
           </div>

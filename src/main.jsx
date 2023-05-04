@@ -12,6 +12,7 @@ import Register from "./userCredentials/Register";
 import AuthProviders from "./providers/AuthProviders";
 import ChefDetails from "./components/ChefDetails";
 import ErrorPage from "./components/ErrorPage";
+import PrivateRoute from "./PrivateRoute/PrivateRoute";
 
 const router = createBrowserRouter([
   {
@@ -37,7 +38,11 @@ const router = createBrowserRouter([
       },
       {
         path: "/chefs/:id",
-        element: <ChefDetails></ChefDetails>,
+        element: (
+          <PrivateRoute>
+            <ChefDetails></ChefDetails>
+          </PrivateRoute>
+        ),
       },
     ],
   },

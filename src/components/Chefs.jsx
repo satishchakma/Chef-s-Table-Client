@@ -4,6 +4,8 @@ import { useEffect } from "react";
 import SingleChef from "../SingleChef";
 import "./Chefs.css";
 
+import LazyLoad from "react-lazy-load";
+
 import { FidgetSpinner } from "react-loader-spinner";
 
 const Chefs = () => {

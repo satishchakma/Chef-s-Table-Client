@@ -1,6 +1,6 @@
 import React, { useReducer, useState } from "react";
 import { useContext } from "react";
-import { Link } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import { AuthContext } from "../providers/AuthProviders";
 
 import { FcGoogle } from "react-icons/fc";
@@ -8,9 +8,15 @@ import { FcGoogle } from "react-icons/fc";
 import { BsGithub } from "react-icons/bs";
 
 const Login = () => {
-  const { signIn, googleSignIn, githubSignIn } = useContext(AuthContext);
+  const { signIn, googleSignIn, githubSignIn, setUser } =
+    useContext(AuthContext);
   const [error, setError] = useState("");
   const [disabled, setDisabled] = useState(false);
+
+  const navigate = useNavigate();
+  const location = useLocation();
+  console.log("login page location", location);
+  const from = location.state?.from?.pathname || "/";
 
   const [password, setPassword] = useState("");
 
@@ -26,7 +32,7 @@ const Login = () => {
       .then((result) => {
         const loggedUser = result.user;
         console.log(loggedUser);
-        // navigate(from, { replace: true });
+        navigate(from, { replace: true });
       })
       .catch((error) => {
         console.log(error);
@@ -50,7 +56,8 @@ const Login = () => {
       .then((result) => {
         const loggedInUser = result.user;
         console.log(loggedInUser);
-        // setUser(loggedInUser);
+        setUser(loggedInUser);
+        navigate(from, { replace: true });
       })
       .catch((error) => {
         console.log(error);
@@ -61,7 +68,8 @@ const Login = () => {
       .then((result) => {
         const loggedInUser = result.user;
         console.log(loggedInUser);
-        // setUser(loggedInUser);
+        setUser(loggedInUser);
+        navigate(from, { replace: true });
       })
       .catch((error) => {
         console.log(error);

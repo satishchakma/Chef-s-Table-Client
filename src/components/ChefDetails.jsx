@@ -18,18 +18,29 @@ const ChefDetails = () => {
   }, []);
   //   console.log(id);
   return (
-    <div className="container mx-auto grid grid-cols-3 chefdetails">
+    <div className="container mx-auto chefdetails">
       <div className="container mx-auto mb-8">
-        <div className="card w-96 glass">
-          <figure>
-            <img src={details?.chef_picture} alt="car!" />
-          </figure>
-          <div className="card-body">
+        <div className="flex gap-8">
+          <div>
+            <figure>
+              <img src={details?.chef_picture} alt="car!" />
+            </figure>
+          </div>
+          <div className="flex flex-col glass p-8 justify-center items-start">
             <h2 className="card-title">{details?.chef_name}</h2>
-            <p>Years of experience: {details?.years_of_experience}</p>
+            <p>
+              <span className="font-semibold">Years of experience:</span>{" "}
+              {details?.years_of_experience}
+            </p>
+            <p> {details?.bio}</p>
 
-            <p>Numbers of recipes: {details?.recipes?.length}</p>
-            <p>Likes: {details?.likes}</p>
+            <p>
+              <span className="font-semibold">Numbers of recipes:</span>{" "}
+              {details?.recipes?.length}
+            </p>
+            <p>
+              <span className="font-semibold">Likes:</span> {details?.likes}
+            </p>
             <div className="card-actions justify-start">
               {/* <Link to={`/chefs/${id}`}>
                 <button className="btn btn-primary">View Recipes</button>

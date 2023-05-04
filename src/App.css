@@ -1,4 +1,5 @@
 body,
-html {
+html,
+.root {
   background-color: white;
 }
