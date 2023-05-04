@@ -10,7 +10,7 @@ const FeaturedSection = () => {
   return (
     <div>
       <h1 className="feature-heading">Featured In</h1>
-      <div className="flex justify-center items-center gap-8 my-16">
+      <div className="flex justify-center items-center gap-8 my-16 flex-col md:flex-row">
         <img src={img1} alt="" />
         <img src={img2} alt="" />
         <img src={img3} alt="" />

@@ -4,7 +4,7 @@ import "./RiceSection.css";
 
 const RiceSection = () => {
   return (
-    <div className="bg-[#FFF8E5] md:flex justify-center items-center rice my-24 ">
+    <div className="bg-[#FFF8E5] md:flex justify-center items-center gap-8 rice my-24 ">
       <div className="basis-1/2">
         <img src={rice} />
       </div>
