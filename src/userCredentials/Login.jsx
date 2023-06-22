@@ -11,7 +11,7 @@ const Login = () => {
   const { signIn, googleSignIn, githubSignIn, setUser } =
     useContext(AuthContext);
   const [error, setError] = useState("");
-  const [disabled, setDisabled] = useState(false);
+  // const [disabled, setDisabled] = useState(false);
 
   const navigate = useNavigate();
   const location = useLocation();
@@ -32,6 +32,7 @@ const Login = () => {
       .then((result) => {
         const loggedUser = result.user;
         console.log(loggedUser);
+        setUser(loggedUser);
         navigate(from, { replace: true });
       })
       .catch((error) => {

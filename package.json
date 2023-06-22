@@ -10,7 +10,6 @@
     "preview": "vite preview"
   },
   "dependencies": {
-    "@heroicons/react": "^2.0.17",
     "cors": "^2.8.5",
     "daisyui": "^2.51.6",
     "firebase": "^9.21.0",
@@ -22,7 +21,6 @@
     "react-lazy-load": "^4.0.1",
     "react-loader-spinner": "^5.3.4",
     "react-router-dom": "^6.11.0",
-    "react-to-pdf": "^0.0.14",
     "react-toastify": "^9.1.2",
     "sort-by": "^1.2.0"
   },
